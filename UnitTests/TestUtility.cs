@@ -14,7 +14,7 @@ namespace UnitTests
             Assert.IsFalse(expected == null || actual == null || expected.Count != actual.Count);
             for (var i = 0; i < expected.Count; i++)
             {
-                Assert.AreEqual(expected[i], actual[i], $"Unequal values at index {i} of the list");
+                Assert.AreEqual(expected[i], actual[i], $"Unequal values at index {i} of the list. Expected {expected[i]} but recieved {actual[i]}");
             }
         }
     }
