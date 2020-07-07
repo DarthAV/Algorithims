@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Algorithims_Practice
 {
@@ -45,52 +46,55 @@ namespace Algorithims_Practice
             return currentNode;
 
         }
-        public void InorderTraversal()
+        public List<int> InorderTraversal()
         {
-            InorderTraversalRecursive(head);
-            Console.WriteLine(" ");
+            List<int> output = new List<int>();
+            InorderTraversalRecursive(head, output);
+            return output;
         }
 
-        private void InorderTraversalRecursive(Node currentNode)
+        private void InorderTraversalRecursive(Node currentNode, List<int> output)
         {
             if (currentNode != null)
             {
-                InorderTraversalRecursive(currentNode.ChildLeft);
-                Console.Write(" " + currentNode.Value);
-                InorderTraversalRecursive(currentNode.ChildRight);
+                InorderTraversalRecursive(currentNode.ChildLeft, output);
+                output.Add(currentNode.Value);
+                InorderTraversalRecursive(currentNode.ChildRight, output);
 
             }
         }
 
-        public void PreorderTraversal()
+        public List<int> PreorderTraversal()
         {
-            PreorderTraversalRecursive(head);
-            Console.WriteLine(" ");
+            List<int> output = new List<int>();
+            PreorderTraversalRecursive(head, output);
+            return output;
         }
 
-        private void PreorderTraversalRecursive(Node currentNode)
+        private void PreorderTraversalRecursive(Node currentNode, List<int> output)
         {
             if (currentNode != null)
             {
-                Console.Write(" " + currentNode.Value);
-                PreorderTraversalRecursive(currentNode.ChildLeft);
-                PreorderTraversalRecursive(currentNode.ChildRight);
+                output.Add(currentNode.Value);
+                PreorderTraversalRecursive(currentNode.ChildLeft, output);
+                PreorderTraversalRecursive(currentNode.ChildRight, output);
             }
         }
 
-        public void PostorderTraversal()
+        public List<int> PostorderTraversal()
         {
-            PostorderTraversalRecursive(head);
-            Console.WriteLine(" ");
+            List<int> output = new List<int>();
+            PostorderTraversalRecursive(head, output);
+            return output;
         }
 
-        private void PostorderTraversalRecursive(Node currentNode)
+        private void PostorderTraversalRecursive(Node currentNode, List<int> output)
         {
             if (currentNode != null)
             {
-                PostorderTraversalRecursive(currentNode.ChildLeft);
-                PostorderTraversalRecursive(currentNode.ChildRight);
-                Console.Write(" " + currentNode.Value);
+                PostorderTraversalRecursive(currentNode.ChildLeft, output);
+                PostorderTraversalRecursive(currentNode.ChildRight, output);
+                output.Add(currentNode.Value);
             }
         }
 
