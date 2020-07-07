@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Algorithims Practice\AlgorithimsPractice.csproj">
-      <Project>{253b4513-c910-443b-9d7b-3fb646787d94}</Project>
-      <Name>AlgorithimsPractice</Name>
+    <ProjectReference Include="..\Algorithims\Algorithims.csproj">
+      <Project>{6d8ba3ed-7db8-402d-9a67-3af5ff9cf5d8}</Project>
+      <Name>Algorithims</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
