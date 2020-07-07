@@ -8,18 +8,18 @@ namespace Algorithims_Practice
 {
     class BinaryTreeTraversal
     {
-        public static void Main()
-        {
-            BinaryTree tree = new BinaryTree();
+        //public static void Main()
+        //{
+        //    BinaryTree tree = new BinaryTree();
 
-            tree.DefaultPopulate();
+        //    tree.DefaultPopulate();
 
-            tree.InorderTraversal();
-            tree.PreorderTraversal();
-            tree.PostorderTraversal();
+        //    tree.InorderTraversal();
+        //    tree.PreorderTraversal();
+        //    tree.PostorderTraversal();
 
-            Console.ReadLine();
-        }
+        //    Console.ReadLine();
+        //}
 
 
         public class BinaryTree
