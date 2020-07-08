@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{253B4513-C910-443B-9D7B-3FB646787D94}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{6D8BA3ED-7DB8-402D-9A67-3AF5FF9CF5D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <RootNamespace>Algorithims_Practice</RootNamespace>
-    <AssemblyName>Algorithims Practice</AssemblyName>
+    <AssemblyName>AlgorithimsPractice</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryTreeTraversal.cs" />
+    <Compile Include="BinaryTree.cs" />
+    <Compile Include="DutchFlagProblem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
