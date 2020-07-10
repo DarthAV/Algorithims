@@ -27,20 +27,16 @@ namespace Algorithims_Practice
                     if (array[frontPointer] == firstNum)
                     {
                         frontPointer++;
+                        continue;
                     }
                     if (array[backPointer] != firstNum)
                     {
                         backPointer--;
+                        continue;
                     }
-
-                    if (array[backPointer] == firstNum && array[frontPointer] != firstNum)
-                    {
-                        swap(array, frontPointer, backPointer);
-                    }
-
+                    swap(array, frontPointer, backPointer);
                 }
             }
-
         }
 
         public static void ThreeNumberSort(int[] array)
@@ -50,10 +46,10 @@ namespace Algorithims_Practice
                 int frontPointer = 0;
                 int backPointer = array.Length - 1;
                 int middlePointer = -1;
-                int firstNum = array.Min();
-                int lastNum = array.Max();
+                int firstNum = array.Min(); //? 
+                int lastNum = array.Max(); //?
                 int middleNum = 0;
-                foreach (var item in array)
+                foreach (var item in array) //?
                 {
                     if (item != firstNum && item != lastNum)
                     {
@@ -61,43 +57,36 @@ namespace Algorithims_Practice
                         break;
                     }
                 }
-                while (frontPointer < backPointer && middlePointer <= backPointer && (middlePointer >= frontPointer || middlePointer == -1))
+
+                while (middlePointer <= backPointer)
                 {
                     if (array[frontPointer] == firstNum)
                     {
                         frontPointer++;
+                        continue;
                     }
                     if (array[backPointer] == lastNum)
                     {
                         backPointer--;
+                        continue;
                     }
-
-                    if (array[frontPointer] != firstNum && middlePointer == -1)
+                    if (middlePointer == -1)
                     {
                         middlePointer = frontPointer;
                     }
-                    while (array[backPointer] != lastNum && array[frontPointer] != firstNum)
+
+                    if (array[middlePointer] == middleNum)
                     {
-
-                        if (array[middlePointer] == middleNum)
-                        {
-                            middlePointer++;
-                        }
-                        if (middlePointer > backPointer || middlePointer < frontPointer)
-                        {
-                            break;
-                        }
-                        else if (array[middlePointer] == lastNum)
-                        {
-                            swap(array, middlePointer, backPointer);
-                        }
-                        else if (array[middlePointer] == firstNum)
-                        {
-                            swap(array, middlePointer, frontPointer);
-                        }
+                        middlePointer++;
                     }
-
-
+                    else if (array[middlePointer] == lastNum)
+                    {
+                        swap(array, middlePointer, backPointer);
+                    }
+                    else if (array[middlePointer] == firstNum)
+                    {
+                        swap(array, middlePointer, frontPointer);
+                    }
                 }
             }
         }

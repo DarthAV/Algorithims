@@ -36,6 +36,15 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void SortingTwoNumbersPositive2()
+        {
+            var simpleArray = new int[] { 0, 0, 1, 0, 1, 1, 1, 0, 0 };
+            var simpleExpected = new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 1 };
+            DutchFlagProblem.TwoNumberSort(simpleArray);
+            TestUtility.AssertArraysAreEqual(simpleExpected, simpleArray);
+        }
+
+        [TestMethod]
         public void SortingTwoNumbersNegative()
         {
             var simpleArray = new int[] { 0, -5, 0, -5, -5, -5, 0, 0 };
@@ -47,7 +56,6 @@ namespace UnitTests
         [TestMethod]
         public void SortingThreeNumbers()
         {
-
             var complexArray = new int[] { 1, 2, 0, 1, 2, 2, 0, 0, 0 };
             var complexExpected = new int[] { 0, 0, 0, 0, 1, 1, 2, 2, 2 };
             DutchFlagProblem.ThreeNumberSort(complexArray);
@@ -55,14 +63,23 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void MergeSortTest()
+        public void SortingThreeNumbers2()
         {
-
-            var mergeSortArray = new int[] { 1, 9, 10, 6, 5, 2, 5, 3, 8 };
-            var mergeExpected = new int[] { 1, 2, 3, 5, 5, 6, 8, 9, 10 };
-            DutchFlagProblem.MergeSort(mergeSortArray);
-            TestUtility.AssertArraysAreEqual(mergeExpected, mergeSortArray);
+            var complexArray = new int[] { 1, 2, 0, 1, 2, 2, 0, 0, 0, 1, 2, 0, 0, 1, 2 };
+            var complexExpected = new int[] { 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2 };
+            DutchFlagProblem.ThreeNumberSort(complexArray);
+            TestUtility.AssertArraysAreEqual(complexExpected, complexArray);
         }
+
+        //[TestMethod]
+        //public void MergeSortTest()
+        //{
+
+        //    var mergeSortArray = new int[] { 1, 9, 10, 6, 5, 2, 5, 3, 8 };
+        //    var mergeExpected = new int[] { 1, 2, 3, 5, 5, 6, 8, 9, 10 };
+        //    DutchFlagProblem.MergeSort(mergeSortArray);
+        //    TestUtility.AssertArraysAreEqual(mergeExpected, mergeSortArray);
+        //}
 
 
     }
