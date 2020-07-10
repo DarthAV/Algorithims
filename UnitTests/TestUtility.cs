@@ -17,5 +17,14 @@ namespace UnitTests
                 Assert.AreEqual(expected[i], actual[i], $"Unequal values at index {i} of the list. Expected {expected[i]} but recieved {actual[i]}");
             }
         }
+
+        public static void AssertArraysAreEqual(int[] expected, int[] actual)
+        {
+            Assert.IsFalse(expected == null || actual == null || expected.Length != actual.Length);
+            for (var i = 0; i < expected.Length; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i], $"Unequal values at index {i} of the array. Expected {expected[i]} but recieved {actual[i]}");
+            }
+        }
     }
 }
