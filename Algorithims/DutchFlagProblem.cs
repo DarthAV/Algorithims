@@ -1,32 +1,120 @@
-using System;
-using System.Collections.Generic;
+
+
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Algorithims_Practice
 {
-    class DutchFlagProblem
+    public class DutchFlagProblem
     {
-        public static void Main()
+
+        private static void swap(int[] array, int index1, int index2)
         {
-            var array = CreateArray();
-            Console.Read();
+            int temp = array[index2];
+            array[index2] = array[index1];
+            array[index1] = temp;
         }
 
-        public static int[] CreateArray()
+        public static void TwoNumberSort(int[] array)
         {
-            var array = new int[] { 1, 2, 0, 1, 2, 2, 0, 0, 0 };
-            return array;
+            if (array != null)
+            {
+                int frontPointer = 0;
+                int backPointer = array.Length - 1;
+                int firstNum = array.Min();
+
+                while (frontPointer < backPointer)
+                {
+                    if (array[frontPointer] == firstNum)
+                    {
+                        frontPointer++;
+                        continue;
+                    }
+                    if (array[backPointer] != firstNum)
+                    {
+                        backPointer--;
+                        continue;
+                    }
+                    swap(array, frontPointer, backPointer);
+                }
+            }
         }
 
-        public static int[] Sort()
+        public static void ThreeNumberSort(int[] array)
         {
-            return null;
+            if (array != null && array.Length > 0)
+            {
+                int frontPointer = 0;
+                int backPointer = array.Length - 1;
+                int middlePointer = -1;
+                int firstNum = array[0];
+                int? lastNum = null;
+                int? middleNum = null;
+
+                for (int i = 1; i < array.Length; i++)
+                {
+                    if (array[i] != firstNum && middleNum == null)
+                    {
+                        middleNum = array[i];
+                    }
+                    else if (array[i] != firstNum && array[i] != middleNum && lastNum == null)
+                    {
+                        lastNum = array[i];
+                        break;
+                    }
+                }
+
+                while (middlePointer <= backPointer)
+                {
+                    if (array[frontPointer] == firstNum)
+                    {
+                        frontPointer++;
+                        continue;
+                    }
+                    if (array[backPointer] == lastNum)
+                    {
+                        backPointer--;
+                        continue;
+                    }
+                    if (middlePointer == -1)
+                    {
+                        middlePointer = frontPointer;
+                    }
+
+                    if (array[middlePointer] == middleNum)
+                    {
+                        middlePointer++;
+                    }
+                    else if (array[middlePointer] == lastNum)
+                    {
+                        swap(array, middlePointer, backPointer);
+                    }
+                    else if (array[middlePointer] == firstNum)
+                    {
+                        swap(array, middlePointer, frontPointer);
+                    }
+                }
+            }
         }
 
 
+        public static void MergeSort(int[] mergeSortArray)
+        {
+            Seperate(mergeSortArray, 0, mergeSortArray.Length);
+        }
 
+        private static void Seperate(int[] array, int start, int end)
+        {
+            int mid = 0;
+            if (start < end)
+            {
+                mid = start + ((end - start) / 2);
+            }
+        }
+
+        private static void Merge(int[] array, int start, int mid, int end)
+        {
+
+        }
 
 
     }
