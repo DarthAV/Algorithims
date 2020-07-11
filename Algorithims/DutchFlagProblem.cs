@@ -41,19 +41,24 @@ namespace Algorithims_Practice
 
         public static void ThreeNumberSort(int[] array)
         {
-            if (array != null)
+            if (array != null && array.Length > 0)
             {
                 int frontPointer = 0;
                 int backPointer = array.Length - 1;
                 int middlePointer = -1;
-                int firstNum = array.Min(); //? 
-                int lastNum = array.Max(); //?
-                int middleNum = 0;
-                foreach (var item in array) //?
+                int firstNum = array[0];
+                int? lastNum = null;
+                int? middleNum = null;
+
+                for (int i = 1; i < array.Length; i++)
                 {
-                    if (item != firstNum && item != lastNum)
+                    if (array[i] != firstNum && middleNum == null)
                     {
-                        middleNum = item;
+                        middleNum = array[i];
+                    }
+                    else if (array[i] != firstNum && array[i] != middleNum && lastNum == null)
+                    {
+                        lastNum = array[i];
                         break;
                     }
                 }

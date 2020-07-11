@@ -56,8 +56,8 @@ namespace UnitTests
         [TestMethod]
         public void SortingThreeNumbers()
         {
-            var complexArray = new int[] { 1, 2, 0, 1, 2, 2, 0, 0, 0 };
-            var complexExpected = new int[] { 0, 0, 0, 0, 1, 1, 2, 2, 2 };
+            var complexArray = new int[] { 0, 1, 2, 0, 1, 2, 2, 0, 0, 0 };
+            var complexExpected = new int[] { 0, 0, 0, 0, 0, 1, 1, 2, 2, 2 };
             DutchFlagProblem.ThreeNumberSort(complexArray);
             TestUtility.AssertArraysAreEqual(complexExpected, complexArray);
         }
@@ -65,8 +65,17 @@ namespace UnitTests
         [TestMethod]
         public void SortingThreeNumbers2()
         {
-            var complexArray = new int[] { 1, 2, 0, 1, 2, 2, 0, 0, 0, 1, 2, 0, 0, 1, 2 };
-            var complexExpected = new int[] { 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2 };
+            var complexArray = new int[] { };
+            var complexExpected = new int[] { };
+            DutchFlagProblem.ThreeNumberSort(complexArray);
+            TestUtility.AssertArraysAreEqual(complexExpected, complexArray);
+        }
+
+        [TestMethod]
+        public void SortingThreeNumbers3()
+        {
+            var complexArray = new int[] { 0, 1, 2, 0, 1, 2, 2, 0, 0, 0, 1, 2, 0, 0, 1, 2 };
+            var complexExpected = new int[] { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2 };
             DutchFlagProblem.ThreeNumberSort(complexArray);
             TestUtility.AssertArraysAreEqual(complexExpected, complexArray);
         }
