@@ -97,25 +97,5 @@ namespace Algorithims_Practice
         }
 
 
-        public static void MergeSort(int[] mergeSortArray)
-        {
-            Seperate(mergeSortArray, 0, mergeSortArray.Length);
-        }
-
-        private static void Seperate(int[] array, int start, int end)
-        {
-            int mid = 0;
-            if (start < end)
-            {
-                mid = start + ((end - start) / 2);
-            }
-        }
-
-        private static void Merge(int[] array, int start, int mid, int end)
-        {
-
-        }
-
-
     }
 }
