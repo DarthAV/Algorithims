@@ -54,6 +54,7 @@
     <Compile Include="TreeTraversalTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DutchFlagSortTests.cs" />
+    <Compile Include="InPlaceArrayMergeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
