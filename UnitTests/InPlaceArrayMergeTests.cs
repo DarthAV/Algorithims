@@ -18,7 +18,37 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void InPlaceArrayMergeTestWithZero()
+        public void InPlaceArrayMergeTestFirstComplex()
+        {
+            var smallArray = new int[] { 0, 7, 9, 10, 15 };
+            var bigArray = new int[] { 5, 6, 11, 17, 18, 20, 0, 0, 0, 0, 0 };
+            var expected = new int[] { 0, 5, 6, 7, 9, 10, 11, 15, 17, 18, 20 };
+            InPlaceArrayMerge.InPlaceMerge(smallArray, bigArray);
+            TestUtility.AssertArraysAreEqual(expected, bigArray);
+        }
+
+        [TestMethod]
+        public void InPlaceArrayMergeTestFirstSmaller()
+        {
+            var smallArray = new int[] { 14 };
+            var bigArray = new int[] { 0, 5, 11, 17, 0};
+            var expected = new int[] { 0, 5, 11, 14, 17 };
+            InPlaceArrayMerge.InPlaceMerge(smallArray, bigArray);
+            TestUtility.AssertArraysAreEqual(expected, bigArray);
+        }
+
+        [TestMethod]
+        public void InPlaceArrayMergeTestSecondSmaller()
+        {
+            var smallArray = new int[] { 7, 9, 11, 15 };
+            var bigArray = new int[] { 19, 0, 0, 0, 0 };
+            var expected = new int[] { 7, 9, 11, 15, 19 };
+            InPlaceArrayMerge.InPlaceMerge(smallArray, bigArray);
+            TestUtility.AssertArraysAreEqual(expected, bigArray);
+        }
+
+        [TestMethod]
+        public void InPlaceArrayMergeTestWithZeros()
         {
             var smallArray = new int[] { 0, 9, 10, 15 };
             var bigArray = new int[] { 0, 5, 11, 17, 0, 0, 0, 0 };
@@ -26,8 +56,6 @@ namespace UnitTests
             InPlaceArrayMerge.InPlaceMerge(smallArray, bigArray);
             TestUtility.AssertArraysAreEqual(expected, bigArray);
         }
-
-
 
         [TestMethod]
         public void InPlaceArrayMergeTestEmpty()

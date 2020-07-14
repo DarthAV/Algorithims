@@ -41,10 +41,6 @@ namespace Algorithims_Practice
                     {
                         bigArray[i] = smallArray[smallArrayPointer--];
                     }
-                    else if (bigArrayPointer >= 0)
-                    {
-                        bigArray[i] = bigArray[bigArrayPointer--];
-                    }
                 }
             }
         }
