@@ -38,6 +38,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryTree.cs" />
+    <Compile Include="CirclePoints.cs" />
     <Compile Include="DutchFlagProblem.cs" />
     <Compile Include="MergeSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
