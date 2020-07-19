@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,35 +9,46 @@ namespace Algorithims_Practice
     public class CirclePoints
     {
 
-        public static bool checkPointInside(Circle circle, int x, int y)
+        public static bool checkPointInside(Circle circle, Point point)
         {
-            var distance = getDistanceFromCenter(circle, x, y);
-            if (circle.radius >= distance)
+            var distance = getDistanceFromCenter(circle, point);
+            if (circle.Radius >= distance)
             {
                 return true;
             }
             return false;
         }
 
-        private static double getDistanceFromCenter(Circle circle, int x, int y)
+        private static double getDistanceFromCenter(Circle circle, Point point)
         {
-            var difX = Math.Abs(circle.centerX - x);
-            var difY = Math.Abs(circle.centerY - y);
-            var dist = Math.Sqrt(Math.Pow(difX, 2) + Math.Pow(difY, 2));
+            var diffX = circle.Center.X - point.X;
+            var diffY = circle.Center.Y - point.Y;
+            var dist = Math.Sqrt(Math.Pow(diffX, 2) + Math.Pow(diffY, 2));
             return dist;
         }
     }
+
+    public class Point
+    {
+        internal int X { get; }
+        internal int Y { get; }
+
+        public Point(int x, int y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+    }
+
     public class Circle
     {
-        internal int centerX { get; set; }
-        internal int centerY { get; set; }
-        internal int radius { get; set; }
+        internal Point Center { get; set; }
+        internal int Radius { get; set; }
 
-        public Circle(int centerX, int centerY, int radius)
+        public Circle(Point center, int radius)
         {
-            this.centerX = centerX;
-            this.centerY = centerY;
-            this.radius = radius;
+            this.Center = center;
+            this.Radius = radius;
 
         }
 
