@@ -12,7 +12,8 @@ namespace Algorithims_Practice
         public static bool checkPointInside(Circle circle, Point point)
         {
             var distance = getDistanceFromCenter(circle, point);
-            if (circle.Radius >= distance)
+            var radius =  Math.Pow(circle.Radius);
+            if (radius >= distance)
             {
                 return true;
             }
@@ -23,7 +24,7 @@ namespace Algorithims_Practice
         {
             var diffX = circle.Center.X - point.X;
             var diffY = circle.Center.Y - point.Y;
-            var dist = Math.Sqrt(Math.Pow(diffX, 2) + Math.Pow(diffY, 2));
+            var dist = Math.Pow(diffX, 2) + Math.Pow(diffY, 2);
             return dist;
         }
     }
