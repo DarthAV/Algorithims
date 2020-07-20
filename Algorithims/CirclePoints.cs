@@ -11,7 +11,7 @@ namespace Algorithims_Practice
 
         public static bool checkPointInside(Circle circle, Point point)
         {
-            var distance = getDistanceFromCenter(circle, point);\
+            var distance = getDistanceFromCenter(circle, point);
             long radius = circle.Radius;
             radius *= radius;
             if (radius >= distance)

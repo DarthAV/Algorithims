@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PointsThroughCirclesTests.cs" />
     <Compile Include="TestUtility.cs" />
     <Compile Include="MergeSortTests.cs" />
     <Compile Include="TreeTraversalTests.cs" />
