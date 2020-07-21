@@ -57,6 +57,7 @@
     <Compile Include="DutchFlagSortTests.cs" />
     <Compile Include="InPlaceArrayMergeTests.cs" />
     <Compile Include="CirclePointsTest.cs" />
+    <Compile Include="InOrderStringReversalTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
