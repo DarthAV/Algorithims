@@ -50,6 +50,7 @@
     <Compile Include="BinaryTree.cs" />
     <Compile Include="CirclePoints.cs" />
     <Compile Include="DutchFlagProblem.cs" />
+    <Compile Include="InOrderStringReversal.cs" />
     <Compile Include="MergeSort.cs" />
     <Compile Include="PointsThroughCircles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
