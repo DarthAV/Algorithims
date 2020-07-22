@@ -55,6 +55,7 @@
     <Compile Include="PointsThroughCircles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="InPlaceArrayMerge.cs" />
+    <Compile Include="WaterWalls.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

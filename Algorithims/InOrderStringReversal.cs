@@ -1,55 +1,58 @@
 ﻿using System;
 
-public class InOrderStringReversal
+namespace Algorithims_Practice
 {
-    public static String InOrderReverse(String words)
+    public class InOrderStringReversal
     {
-        if(words == null)
+        public static String InOrderReverse(String words)
         {
-            return null;
+            if (words == null)
+            {
+                return null;
+            }
+            var letters = words.ToCharArray();
+
+            Reverse(letters, 0, letters.Length - 1);
+
+            int pointer = 0;
+            for (int i = 0; i < letters.Length; i++)
+            {
+                if (letters[i] == ' ' && i != pointer)
+                {
+                    Reverse(letters, pointer, i - 1);
+                    pointer = i + 1;
+                }
+                else if (letters[i] == ' ' && i == pointer)
+                {
+                    pointer = i + 1;
+                }
+            }
+            Reverse(letters, pointer, letters.Length - 1);
+
+            return new String(letters);
         }
-        var letters = words.ToCharArray();
 
-        Reverse(letters, 0, letters.Length - 1);
-
-        int pointer = 0;
-        for (int i = 0; i < letters.Length; i++)
+        private static void Reverse(char[] letters, int start, int end)
         {
-            if (letters[i] == ' ' && i != pointer)
+            if (letters != null)
             {
-                Reverse(letters, pointer, i - 1);
-                pointer = i + 1;
-            }
-            else if (letters[i] == ' ' && i == pointer)
-            {
-                pointer = i + 1;
+                var frontPointer = start;
+                var backPointer = end;
+
+                while (frontPointer < backPointer)
+                {
+                    swap(letters, frontPointer, backPointer);
+                    backPointer--;
+                    frontPointer++;
+                }
             }
         }
-        Reverse(letters, pointer, letters.Length - 1);
 
-        return new String(letters);
-    }
-
-    private static void Reverse(char[] letters, int start, int end)
-    {
-        if (letters != null)
+        private static void swap(char[] letters, int index1, int index2)
         {
-            var frontPointer = start;
-            var backPointer = end;
-
-            while (frontPointer < backPointer)
-            {
-                swap(letters, frontPointer, backPointer);
-                backPointer--;
-                frontPointer++;
-            }
+            var temp = letters[index2];
+            letters[index2] = letters[index1];
+            letters[index1] = temp;
         }
-    }
-
-    private static void swap(char[] letters, int index1, int index2)
-    {
-        var temp = letters[index2];
-        letters[index2] = letters[index1];
-        letters[index1] = temp;
     }
 }

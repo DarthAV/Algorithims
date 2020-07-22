@@ -58,6 +58,7 @@
     <Compile Include="InPlaceArrayMergeTests.cs" />
     <Compile Include="CirclePointsTest.cs" />
     <Compile Include="InOrderStringReversalTests.cs" />
+    <Compile Include="WaterWallsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

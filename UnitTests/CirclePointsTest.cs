@@ -61,8 +61,8 @@ namespace UnitTests
         [TestMethod]
         public void PointInCircleMaxRadius()
         {
-            var circle = new Circle(new Point(0, 0), Int32.MaxValue); ;
-            Point point = new Point(Int32.MaxValue, 0);
+            var circle = new Circle(new Point(0, 0), int.MaxValue); ;
+            Point point = new Point(int.MaxValue, 0);
             var expected = true;
             var actual = CirclePoints.checkPointInside(circle, point);
             Assert.IsTrue(expected == actual);
@@ -71,7 +71,7 @@ namespace UnitTests
         public void PointInCircleMaxPoint()
         {
             var circle = new Circle(new Point(0, 0), 5); ;
-            Point point = new Point(Int32.MaxValue, Int32.MaxValue);
+            Point point = new Point(int.MaxValue, int.MaxValue);
             var expected = false;
             var actual = CirclePoints.checkPointInside(circle, point);
             Assert.IsTrue(expected == actual);

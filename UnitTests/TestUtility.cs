@@ -21,7 +21,7 @@ namespace UnitTests
         {
             Assert.IsTrue((expected == null && actual == null) || !(expected == null || actual == null));
             Assert.IsTrue(String.Equals(expected, actual));
-            
+
         }
 
         public static void AssertArraysAreEqual(int[] expected, int[] actual)
