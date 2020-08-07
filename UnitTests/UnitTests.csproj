@@ -59,6 +59,7 @@
     <Compile Include="InPlaceArrayMergeTests.cs" />
     <Compile Include="CirclePointsTest.cs" />
     <Compile Include="InOrderStringReversalTests.cs" />
+    <Compile Include="DeleteNodesLinkedListTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
