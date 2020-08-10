@@ -1,4 +1,4 @@
-﻿
+
 namespace Algorithims_Practice
 {
     public class ReverseSinglyLinkedList
@@ -9,7 +9,7 @@ namespace Algorithims_Practice
             {
                 for (int i = 0; i < list.GetLength() / 2; i++)
                 {
-                    swap(list, i, list.GetLength() - i);
+                    swap(list, i, list.GetLength() - i - 1);
                 }
             }
         }
@@ -32,17 +32,17 @@ namespace Algorithims_Practice
 
             var isXHead = list.Head == x;
             var isYHead = list.Head == y;
-            var isXTail = list.Tail == x;
-            var isYTail = list.Tail == y;
+            var isXTail = list.GetTail() == x;
+            var isYTail = list.GetTail() == y;
 
             if (!isXHead)
             {
-                xPrev = list.Get(index1 - 1);
+                LinkedListNode<int> xPrev = list.Get(index1 - 1);
                 xPrev.Next = y;
             }
             if (!isYHead)
             {
-                yPrev = list.Get(index2 - 1);
+                LinkedListNode<int> yPrev = list.Get(index2 - 1);
                 yPrev.Next = x;
             }
 

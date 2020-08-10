@@ -15,6 +15,17 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void TwoNodes()
+        {
+            var linkedList = new LinkedList<int>(new LinkedListNode<int>(1));
+            linkedList.AddBack(new LinkedListNode<int>(2));
+            var expected = new LinkedList<int>(new LinkedListNode<int>(1));
+            expected.AddFront(new LinkedListNode<int>(2));
+            ReverseSinglyLinkedList.ReverseLinkedList(linkedList);
+            TestUtility.AssertLinkedListsAreEqual(expected, linkedList);
+        }
+
+        [TestMethod]
         public void ThreeNodes()
         {
             var linkedList = new LinkedList<int>(new LinkedListNode<int>(1));
@@ -54,7 +65,7 @@ namespace UnitTests
             expected.AddFront(new LinkedListNode<int>(2));
             expected.AddFront(new LinkedListNode<int>(3));
             expected.AddFront(new LinkedListNode<int>(4));
-            linkedList.AddBack(new LinkedListNode<int>(5));
+            expected.AddFront(new LinkedListNode<int>(5));
             ReverseSinglyLinkedList.ReverseLinkedList(linkedList);
             TestUtility.AssertLinkedListsAreEqual(expected, linkedList);
         }
@@ -65,6 +76,15 @@ namespace UnitTests
             var linkedList = new LinkedList<int>(null);
             var expected = new LinkedList<int>(null);
             ReverseSinglyLinkedList.ReverseLinkedList(linkedList);
+            TestUtility.AssertLinkedListsAreEqual(expected, linkedList);
+        }
+
+        [TestMethod]
+        public void NullList()
+        {
+            var linkedList = new LinkedList<int>(null);
+            var expected = new LinkedList<int>(null);
+            ReverseSinglyLinkedList.ReverseLinkedList(null);
             TestUtility.AssertLinkedListsAreEqual(expected, linkedList);
         }
     }

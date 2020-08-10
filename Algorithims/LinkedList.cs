@@ -4,28 +4,33 @@ namespace Algorithims_Practice
     public class LinkedList<T>
     {
         internal LinkedListNode<int> Head { get; set; }
-        internal LinkedListNode<int> Tail { get; set; }
 
         public LinkedList(LinkedListNode<int> headNode)
         {
             this.Head = headNode;
-            this.Tail = headNode;
         }
 
         public LinkedListNode<int> Get(int index)
         {
-            LinkedListNode<int> currentNode = this.Head != null ? this.Head : null;
-
-            for (int i = 0; i < index; i++)
+            LinkedListNode<int> currentNode = this.Head;
+            int count = 0;
+            while (currentNode != null)
             {
-                if (currentNode.Next != null)
-                {
-                    currentNode = currentNode.Next;
-                }
-                else
-                {
-                    break;
-                }
+                if (count == index)
+                    return currentNode;
+                count++;
+                currentNode = currentNode.Next;
+            }
+
+            return currentNode;
+        }
+
+        public LinkedListNode<int> GetTail()
+        {
+            LinkedListNode<int> currentNode = this.Head;
+            while (currentNode != null && currentNode.Next != null)
+            {
+                currentNode = currentNode.Next;
             }
 
             return currentNode;
@@ -39,8 +44,7 @@ namespace Algorithims_Practice
 
         public void AddBack(LinkedListNode<int> newNode)
         {
-            Tail.Next = newNode;
-            Tail = newNode;
+            GetTail().Next = newNode;
         }
 
         public static void Delete(LinkedList<int> list, LinkedListNode<int> nodeToDelete)
