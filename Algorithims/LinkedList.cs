@@ -68,12 +68,13 @@ namespace Algorithims_Practice
             {
                 if (nodeToDelete.Next == null)
                 {
-                    //not done, needs to set itself to nothing
+                    nodeToDelete = null;
                     return;
                 }
-                //not done, needs to set itself to the next one
-
+                nodeToDelete.Value = nodeToDelete.Next.Value;
+                DeleteNextNode(nodeToDelete);
             }
+
         }
         public static void DeleteNextNode(LinkedListNode<int> node)
         {
@@ -104,7 +105,7 @@ namespace Algorithims_Practice
     public class LinkedListNode<T>
     {
         internal LinkedListNode<int> Next { get; set; }
-        public int Value { get; }
+        public int Value { get; set; }
 
         public LinkedListNode(int value)
         {

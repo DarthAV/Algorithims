@@ -71,7 +71,7 @@ namespace UnitTests
             TestUtility.AssertLinkedListsAreEqual(expected, linkedList);
         }
         [TestMethod]
-        public void DeleteNullNodeInWithoutList()
+        public void DeleteNullNodeWithoutList()
         {
             var linkedList = new LinkedList<int>(null);
             var expected = new LinkedList<int>(null);
