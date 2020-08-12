@@ -1,3 +1,5 @@
+﻿
+using System;
 
 namespace Algorithims_Practice
 {
@@ -89,6 +91,36 @@ namespace Algorithims_Practice
         }
         public static int CheckIfMerges(LinkedList<int> list1, LinkedList<int> list2)
         {
+            if (list1 == null || list2 == null || list1.Head == null || list2.Head == null)
+            {
+                return -1;
+            }
+
+            if (list1.GetTail() == list2.GetTail())
+            {
+                int length1 = list1.GetLength();
+                int length2 = list2.GetLength();
+                int startingIndex = Math.Abs(length1 - length2);
+                var NodeOfLongList = list1.Get(startingIndex);
+                var NodeOfShortList = list2.Get(0);
+                if (length1 < length2)
+                {
+                    NodeOfLongList = list2.Get(startingIndex);
+                    NodeOfShortList = list1.Get(0);
+                }
+                var counter = 0;
+                while (NodeOfLongList.Next != null)
+                {
+                    if (NodeOfLongList == NodeOfShortList)
+                    {
+                        break;
+                    }
+                    counter++;
+                    NodeOfLongList = NodeOfLongList.Next;
+                    NodeOfShortList = NodeOfShortList.Next;
+                }
+                return counter + startingIndex;
+            }
             return -1;
         }
 
