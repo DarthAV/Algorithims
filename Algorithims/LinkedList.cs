@@ -124,6 +124,23 @@ namespace Algorithims_Practice
             return -1;
         }
 
+        public static void ReverseLinkedList(LinkedList<int> list)
+        {
+            if (list != null)
+            {
+                LinkedListNode<int> prevNode = null;
+                LinkedListNode<int> currNode = list.Head;
+                while (currNode != null)
+                {
+                    LinkedListNode<int> next = currNode.Next;
+                    currNode.Next = prevNode;
+                    prevNode = currNode;
+                    currNode = next;
+                }
+                list.Head = prevNode;
+            }
+        }
+
         public int GetLength()
         {
             var counter = 0;

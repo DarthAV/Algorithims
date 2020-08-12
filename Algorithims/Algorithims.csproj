@@ -56,7 +56,6 @@
     <Compile Include="PointsThroughCircles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="InPlaceArrayMerge.cs" />
-    <Compile Include="ReverseSinglyLinkedList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
