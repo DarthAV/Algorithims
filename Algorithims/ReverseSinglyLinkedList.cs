@@ -7,16 +7,16 @@ namespace Algorithims_Practice
         {
             if (list != null)
             {
-                LinkedListNode<int> previous = null;
-                LinkedListNode<int> current = list.Head;
-                while (current != null)
+                LinkedListNode<int> prevNode = null;
+                LinkedListNode<int> currNode = list.Head;
+                while (currNode != null)
                 {
-                    LinkedListNode<int> next = current.Next;
-                    current.Next = previous;
-                    previous = current;
-                    current = next;
+                    LinkedListNode<int> nextNode = currNode.Next;
+                    currNode.Next = prevNode;
+                    prevNode = currNode;
+                    currNode = nextNode;
                 }
-                list.Head = previous;
+                list.Head = prevNode;
             }
         }
     }
