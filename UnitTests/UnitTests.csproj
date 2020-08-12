@@ -60,6 +60,7 @@
     <Compile Include="CirclePointsTest.cs" />
     <Compile Include="InOrderStringReversalTests.cs" />
     <Compile Include="DeleteNodesLinkedListTests.cs" />
+    <Compile Include="DetectMergingListsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

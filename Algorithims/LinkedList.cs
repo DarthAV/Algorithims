@@ -1,4 +1,4 @@
-﻿
+
 namespace Algorithims_Practice
 {
     public class LinkedList<T>
@@ -86,6 +86,10 @@ namespace Algorithims_Practice
             {
                 node.Next = node.Next.Next;
             }
+        }
+        public static int CheckIfMerges(LinkedList<int> list1, LinkedList<int> list2)
+        {
+            return -1;
         }
 
         public int GetLength()
