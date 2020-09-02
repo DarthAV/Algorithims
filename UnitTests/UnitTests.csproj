@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PointsThroughCirclesTests.cs" />
+    <Compile Include="ReverseSinglyLinkedListTests.cs" />
     <Compile Include="TestUtility.cs" />
     <Compile Include="MergeSortTests.cs" />
     <Compile Include="TreeTraversalTests.cs" />
@@ -58,6 +59,8 @@
     <Compile Include="InPlaceArrayMergeTests.cs" />
     <Compile Include="CirclePointsTest.cs" />
     <Compile Include="InOrderStringReversalTests.cs" />
+    <Compile Include="DeleteNodesLinkedListTests.cs" />
+    <Compile Include="DetectMergingListsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
