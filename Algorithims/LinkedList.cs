@@ -1,20 +1,14 @@
-﻿
-using System;
+﻿using System;
 
 namespace Algorithims_Practice
 {
-    public class LinkedList<T>
+    public class LinkedList<T> where T : IComparable
     {
-        internal LinkedListNode<int> Head { get; set; }
+        private Node<T> Head { get; set; }
 
-        public LinkedList(LinkedListNode<int> headNode)
+        public Node<T> Get(int index)
         {
-            this.Head = headNode;
-        }
-
-        public LinkedListNode<int> Get(int index)
-        {
-            LinkedListNode<int> currentNode = this.Head;
+            Node<T> currentNode = this.Head;
             int count = 0;
             while (currentNode != null)
             {
@@ -27,9 +21,9 @@ namespace Algorithims_Practice
             return currentNode;
         }
 
-        public LinkedListNode<int> GetTail()
+        public Node<T> GetTail()
         {
-            LinkedListNode<int> currentNode = this.Head;
+            Node<T> currentNode = this.Head;
             while (currentNode != null && currentNode.Next != null)
             {
                 currentNode = currentNode.Next;
@@ -38,24 +32,23 @@ namespace Algorithims_Practice
             return currentNode;
         }
 
-        public void AddFront(LinkedListNode<int> newNode)
+        public void Add(Node<T> newNode)
         {
-            newNode.Next = Head;
-            Head = newNode;
-        }
-
-        public void AddBack(LinkedListNode<int> newNode)
-        {
+            if (this.Head == null)
+            {
+                this.Head = newNode;
+                return;
+            }
             GetTail().Next = newNode;
         }
 
-        public static void Delete(LinkedList<int> list, LinkedListNode<int> nodeToDelete)
+        public static void Delete(LinkedList<T> list, Node<T> nodeToDelete)
         {
             if (list != null && nodeToDelete != null && list.Head != null)
             {
-                LinkedListNode<int> prevNode = null;
+                Node<T> prevNode = null;
                 var curNode = list.Head;
-                while (curNode.Value != nodeToDelete.Value)
+                while (curNode.Value.CompareTo(nodeToDelete.Value) != 0)
                 {
                     prevNode = curNode;
                     curNode = curNode.Next;
@@ -68,7 +61,7 @@ namespace Algorithims_Practice
             }
         }
 
-        public static void Delete(LinkedListNode<int> nodeToDelete)
+        public static void Delete(Node<int> nodeToDelete)
         {
             if (nodeToDelete != null)
             {
@@ -82,7 +75,7 @@ namespace Algorithims_Practice
             }
 
         }
-        public static void DeleteNextNode(LinkedListNode<int> node)
+        public static void DeleteNextNode(Node<int> node)
         {
             if (node != null && node.Next != null)
             {
@@ -128,11 +121,11 @@ namespace Algorithims_Practice
         {
             if (list != null)
             {
-                LinkedListNode<int> prevNode = null;
-                LinkedListNode<int> currNode = list.Head;
+                Node<int> prevNode = null;
+                Node<int> currNode = list.Head;
                 while (currNode != null)
                 {
-                    LinkedListNode<int> next = currNode.Next;
+                    Node<int> next = currNode.Next;
                     currNode.Next = prevNode;
                     prevNode = currNode;
                     currNode = next;
@@ -159,12 +152,12 @@ namespace Algorithims_Practice
 
     }
 
-    public class LinkedListNode<T>
+    public class Node<T>
     {
-        internal LinkedListNode<int> Next { get; set; }
-        public int Value { get; set; }
+        internal Node<T> Next { get; set; }
+        public T Value { get; set; }
 
-        public LinkedListNode(int value)
+        public Node(T value)
         {
             this.Value = value;
         }
